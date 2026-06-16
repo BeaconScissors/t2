@@ -1,6 +1,5 @@
 import { Student } from "./types"
 
-//ts-ignore
 export const studentsData: Student[] = 
 [
   {
