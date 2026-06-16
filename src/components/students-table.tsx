@@ -7,6 +7,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Student } from "@/lib/types"
+import { formatCredits, formatDueSubjects } from "@/lib/utils"
 import StudentDetails from "@/components/student-details"
 
 interface StudentsTableProps {
@@ -41,8 +42,8 @@ export default function StudentsTable({ students, onStudentSelect, selectedStude
                 <TableCell className="font-medium text-gray-900">{student.roll_number}</TableCell>
                 <TableCell className="text-gray-800">{student.name}</TableCell>
                 <TableCell className="text-gray-800">{student.GPA}</TableCell>
-                <TableCell className="text-gray-800">{`${student.studentCredits}/123`}</TableCell>
-                <TableCell className="text-gray-800">{`${student.dueSubjects}/${student.totalSubjects}`}</TableCell>
+                <TableCell className="text-gray-800">{formatCredits(student)}</TableCell>
+                <TableCell className="text-gray-800">{formatDueSubjects(student)}</TableCell>
               </TableRow>
               {selectedStudent === student.roll_number && (
                 <TableRow>
@@ -58,4 +59,3 @@ export default function StudentsTable({ students, onStudentSelect, selectedStude
     </div>
   )
 }
-//helooooooooooooooooooooooooooooooooooooooooooooo
